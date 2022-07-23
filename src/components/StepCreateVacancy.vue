@@ -19,9 +19,14 @@
           </v-stepper-step>
 
           <v-divider v-if="n !== steps" :key="n"></v-divider>
-        </template>
-      </v-stepper-header>
-
+        </template> 
+    
+             </v-stepper-header>
+<!--<v-card class="mb-4">
+            <v-card-text>
+                <v-select v-model="steps" :items="[2, 3, 4, 5, 6]" label="# of steps"></v-select>
+            </v-card-text>
+        </v-card>-->
       <v-stepper-items>
         <v-stepper-content step="1">
           <div v-case="1">
