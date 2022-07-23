@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-container v-if="!createNewWindow" class="pt-10">
-      <v-btn outlined rounded text @click="createNewCompany">
+      <h2>You can create new company here</h2>
+      <v-btn id="buttonClick" outlined rounded text @click="createNewCompany">
         Create new Company
       </v-btn>
     </v-container>
@@ -10,13 +11,15 @@
         <v-card-actions>
           <v-container max-width="300">
             <form class="d-flex flex-column">
-              <v-text-field v-model="name" label="Name company"></v-text-field>
+              <v-text-field required id="userText" v-model="name"  label="Name company"></v-text-field>
               <v-text-field
+                id="linkIn" 
                 v-model="link"
                 label="Link video"
                 clearable
               ></v-text-field>
               <v-textarea
+                id="middleText"
                 clearable
                 v-model="description"
                 clear-icon="mdi-close-circle"
@@ -24,7 +27,7 @@
                 value="This is clearable text."
               ></v-textarea>
 
-              <v-btn class="mr-4" @click="submitBIO"> Create </v-btn>
+              <v-btn id="buttonClick" class="mr-4" @click="submitBIO"> Create </v-btn>
             </form>
           </v-container>
         </v-card-actions>
@@ -52,13 +55,13 @@
             </v-list-item-subtitle>
           </v-list-item-content>
 
-          <v-list-item-avatar tile size="80" color="grey"
+          <v-list-item-avatar tile size="80" color="green"
             >LOGO</v-list-item-avatar
           >
         </v-list-item>
 
         <v-card-actions>
-          <v-btn outlined rounded text @click="overview(index)">
+          <v-btn id="buttonClick" outlined rounded text @click="overview(index)">
             Overview
           </v-btn>
         </v-card-actions>
@@ -100,4 +103,24 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+#userText{
+  font-size: 35px;
+  font-weight: bold;
+}
+#linkIn{
+  color:blue;
+  font-size: 25px;
+}
+#middleText{
+  font-size: 20px;
+
+}
+#buttonClick{
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+</style>

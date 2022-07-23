@@ -15,11 +15,11 @@
             ></iframe>
           </v-container>
         </v-card-actions>
-        <v-container class="d-flex flex-column">
-          <h2>{{ company.name }}</h2>
-          <h4>{{ company.description }}</h4>
+        <v-container id="positionCompanyName" class="d-flex flex-column">
+          <h2 >{{ company.name }}</h2>
+          <h4 >{{ company.description }}</h4>
           <v-card-actions>
-            <v-btn outlined rounded text @click="generateLink(index)">
+            <v-btn id="GenerationButtonClick" outlined text @click="generateLink(index)">
               Generate link
             </v-btn>
           </v-card-actions>
@@ -27,7 +27,7 @@
       </v-card>
       <h2 class="ma-3 mb-1">Vacancies</h2>
       <v-card-actions>
-        <v-btn outlined rounded text @click="createVacancy()">
+        <v-btn id="buttonClick" outlined rounded text @click="createVacancy()">
           Create new vacancy
         </v-btn>
       </v-card-actions>
@@ -52,10 +52,10 @@
           </v-list-item>
 
           <v-card-actions>
-            <v-btn outlined rounded text @click="overview($route.params.id)">
+            <v-btn id="btnOfCard" outlined rounded text @click="overview($route.params.id)">
               Overview
             </v-btn>
-            <v-btn outlined rounded text @click="edit($route.params.id)">
+            <v-btn id="btnOfCard" outlined rounded text @click="edit($route.params.id)">
               Edit
             </v-btn>
           </v-card-actions>
@@ -116,4 +116,31 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+#positionCompanyName{
+ margin-left: 30px;
+ margin-inline-start: 20px;
+}
+#GenerationButtonClick{
+  margin-top: 230px; 
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  border-radius: 6px;
+  margin-left: -20px;
+}
+#buttonClick{
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+#btnOfCard{
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+</style>

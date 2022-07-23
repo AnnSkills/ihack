@@ -31,16 +31,17 @@
         <v-stepper-content step="1">
           <div v-case="1">
             <v-text-field
+            id="mainText"
               v-model="nameVacancy"
               class="mb-5"
-              label="Name vacancy"
+              label="Name of vacancy"
               hide-details="auto"
             ></v-text-field>
           </div>
         </v-stepper-content>
         <v-stepper-content step="2">
           <v-card>
-            <v-card-text style="width: 810px">
+            <v-card-text id="mainText" style="width: 810px">
               <v-row align="center">
                 <v-text-field v-model="priorities[0]" label="New skill">
                   <v-icon slot="append" color="green"> 15% </v-icon>
@@ -100,38 +101,38 @@
           <v-card>
             <v-card-text style="width: 810px">
               <v-row align="center">
-                <v-text-field v-model="criteries[0]" label="New skill">
+                <v-text-field id="mainText" v-model="criteries[0]" label="New skill">
                   <v-icon slot="append" color="green"> 5% </v-icon>
                 </v-text-field>
               </v-row>
               <v-row align="center">
-                <v-text-field v-model="criteries[1]" label="New skill"
+                <v-text-field id="mainText" v-model="criteries[1]" label="New skill"
                   ><v-icon slot="append" color="green">
                     5%
                   </v-icon></v-text-field
                 >
               </v-row>
               <v-row align="center">
-                <v-text-field v-model="criteries[2]" label="New skill"
+                <v-text-field id="mainText" v-model="criteries[2]" label="New skill"
                   ><v-icon slot="append" color="green">
                     5%
                   </v-icon></v-text-field
                 >
               </v-row>
               <v-row align="center">
-                <v-text-field v-model="criteries[3]" label="New skill"
+                <v-text-field id="mainText" v-model="criteries[3]" label="New skill"
                   ><v-icon slot="append" color="green">
                     5%
                   </v-icon></v-text-field
                 >
               </v-row>
               <v-row align="center">
-                <v-text-field v-model="criteries[4]" label="New skill"
+                <v-text-field id="mainText" v-model="criteries[4]" label="New skill"
                   ><v-icon slot="append" color="red"> 0% </v-icon></v-text-field
                 >
               </v-row>
               <v-row align="center">
-                <v-text-field v-model="criteries[5]" label="New skill"
+                <v-text-field id="mainText" v-model="criteries[5]" label="New skill"
                   ><v-icon slot="append" color="red"> 0% </v-icon></v-text-field
                 >
               </v-row>
@@ -140,16 +141,19 @@
         </v-stepper-content>
         <v-stepper-content step="6">
           <v-textarea
+          id="middleText"
             name="input-7-1"
             label="Relevant person"
             v-model="relevant"
           ></v-textarea>
           <v-textarea
+          id="middleText"
             name="input-7-1"
             label="Personnel reserve"
             v-model="personnelReserve"
           ></v-textarea>
           <v-textarea
+          id="middleText"
             name="input-7-1"
             label="Least Suitable"
             v-model="leastSuitable"
@@ -221,4 +225,11 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+#mainText{
+  font-size: 30px;
+}
+#middleText{
+  font-size: 20px;
+}
+</style>
